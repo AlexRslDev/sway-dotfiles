@@ -1,0 +1,145 @@
+// Docs: https://github.com/Alexays/Waybar/wiki/
+{
+  "name": "gruvbox-status-bar",
+  "layer": "bottom",
+  "position": "bottom",
+  "output": "DP-3", // or HDMI-A-2
+  "passthrough": false,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/separatorbig",
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "tray",
+    "temperature",
+    "custom/separatorsmall",
+    "cpu",
+    "custom/separatorsmall",
+    "memory",
+    "custom/separatorsmall",
+    "disk",
+    "custom/separatorsmall",
+    "network",
+    "custom/separatorsmall",
+    "pulseaudio",
+    "custom/separatorsmall",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "sort-by-number": true,
+    "all-outputs": true,
+    "window-rewrite": {
+      "title<.*youtube.*>": " ",
+      "title<.*whatsapp.*>": "",
+      "title<.*facebook.*>": "",
+      "title<.*figma.*>": "",
+      "title<.*discord.*>": " ",
+      "class<firefox-developer-edition>": "🦊",
+      "class<firefox>": "",
+      "class<com.mitchellh.ghostty>": " ",
+      "class<code>": "󰨞 ",
+      "title<.*nvim ~.*>": " ",
+      "title<.*nvim.*>": " ",
+      "class<spotify>": " ",
+      "class<chrome>": "",
+      "class<brave-browser>": "🦁",
+      "class<vlc>": "󰕼",
+      "title<.*gmail.*>": "󰊫",
+      "class<telegram-desktop>": "",
+      "class<virt-manager>": "",
+      "class<obs>": "📹",
+      "class<android-studio>": ""
+    }
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 12,
+    "show-passive-items": true
+  },
+  "clock": {
+    "format": "{:%a %b %d  %I:%M %p}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'>{}</span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#EBDBB2'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "pulseaudio": {
+    "format": "    <span color='#8EC07C'>{volume}%</span>",
+    "format-muted": "",
+    "on-click": "pavucontrol"
+    //"format-bluetooth": "{volume}% {icon}   {format_source}",
+    //"format-bluetooth-muted": " {icon}   {format_source}",
+    //"format-muted": " {format_source}",
+    //"format-source": "{volume}% ",
+    //"format-source-muted": "",
+  },
+  "network": {
+    "format-wifi": "    <span color='#8EC07C'>{signalStrength}%</span>",
+    "format-ethernet": "󰈀   {ifname}",
+    "format-disconnected": "󰖪",
+    "tooltip-format": "{ifname}: {essid} ({signalStrength}%)"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "cpu": {
+    "critical-threshold": 80,
+    "format": "   <span color='#8EC07C'>{usage}%</span>"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "  <span color='#8EC07C'>{temperatureC}°</span>",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "   <span color='#8EC07C'>{percentage}%</span>",
+    "tooltip-format": "{used} GiB used of {total} GiB"
+  },
+  "disk": {
+    "format": "󰋊  <span color='#8EC07C'>{percentage_used}%</span>",
+    "path": "/"
+  },
+  "custom/separatorbig": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/separatorsmall": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false
+  }
+}

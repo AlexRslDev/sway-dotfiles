@@ -1,0 +1,85 @@
+  {
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+    "logo": {
+      "source": "/home/crownion/Documents/Wallpapers/Terminal/kdash2.jpg",
+      "padding": {"top": 1}
+    },
+    "display": {
+      "separator": "",
+      "key": {
+        "width": 12,
+        "type": "both"
+      },
+      "color": "reset_"
+    },
+    "modules": [
+      "break",
+      "break",
+      {
+        "type": "os",
+        "key": "os",
+        "format": "~   {name}"
+      },
+      {
+        "type": "kernel",
+        "key": "kernel",
+        "format": "~   {sysname} {release}"
+      },
+      {
+        "type": "packages",
+        "key": "pkgs",
+        "format": "~   {all} Packages"
+      },
+      {
+        "type": "wm",
+        "key": "wm",
+        "format": "~   {process-name} {version}"
+      },
+      {
+        "type": "terminal",
+        "key": "term",
+        "format": "~   {process-name} {version}"
+      },
+      {
+        "type": "shell",
+        "key": "shell",
+        "format": "~   {process-name} {version}"
+      },
+      {
+        "type": "uptime",
+        "key": "uptime",
+        "format": "~   {hours} hrs, {minutes} mins"
+      },
+      "break",
+      {
+        "type": "cpu",
+        "key": "cpu",
+        "format": "~   {name}"
+      },
+      {
+        "type": "gpu",
+        "key": "gpu",
+        "format": "~   {name}"
+      },
+      {
+        "type": "memory",
+        "key": "memory",
+        "format": "~   {used} / {total}"
+      },
+      {
+        "type": "swap",
+        "key": "swap",
+        "format": "~   {used} / {total}"
+      },
+      {
+        "type": "disk",
+        "key": "disk",
+        "format": "~   {size-used} used | {size-free} free"
+      },
+      "break",
+      {
+        "type": "colors",
+        "symbol": "circle"
+      }
+  ]
+}

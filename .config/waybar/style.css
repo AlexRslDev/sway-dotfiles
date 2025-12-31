@@ -1,0 +1,96 @@
+/*:root {
+  --text: #EBDBB2;
+  --accent: #8EC07C;
+}
+*/
+
+* {
+  font-family: "Hack Nerd Font";
+  font-size: 15px;
+  font-weight: 400;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  transition: background .15s;
+}
+
+#waybar {
+  background: #3C3836;
+  transition-property: background-color;
+  transition-duration: .15s;
+}
+
+#workspaces button {
+  padding: 0px 4px;
+  margin: 4px 2px 4px 2px;
+  background: #504945;
+  color: #928374;
+  border-radius: 2px;
+}
+
+#window {
+  color: #EBDBB2;
+}
+
+#workspaces button:first-child {
+  margin: 4px 2px 4px 12px;
+}
+
+
+#workspaces button:hover {
+  background: #8EC07C;
+  color: #3C3836;
+  border: none;
+  box-shadow: none;
+}
+
+#workspaces button.active {
+  background: #8EC07C;
+  color: #3C3836;
+}
+
+#workspaces button.urgent {
+  background: alpha(#cc241d, 0.75);
+}
+
+#clock,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#temperature,
+#tray,
+#disk,
+#battery {
+  padding: 0 10px;
+  margin: 5px 0px;
+  color: #EBDBB2;
+}
+
+.modules-left>widget:last-child>#workspaces {
+  margin-left: 16px;
+}
+
+#temperature.critical {
+  background-color: alpha(#cc241d, 0.75);
+}
+
+#tray {
+  margin-right: 16px;
+}
+
+#clock {
+  margin: 0 12px 0 0;
+}
+
+#custom-separatorbig {
+  color: #EBDBB2;
+  margin: 0 16px;
+}
+
+#custom-separatorsmall {
+  color: #EBDBB2;
+  margin: 0 8px;
+}
