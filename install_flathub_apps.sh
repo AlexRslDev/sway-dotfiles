@@ -13,6 +13,9 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
+# Variables
+REAL_USER="${SUDO_USER:-$USER}"
+
 # Apps List
 APPS=(
   "com.bitwarden.desktop"
@@ -56,7 +59,7 @@ APPS=(
 if pacman -Qi "flatpak" &>/dev/null; then
   echo -e "${INST} Installing Flathub Apps...${NC}"
 
-  flatpak install flathub -y "${APPS[@]}"
+  sudo -u "$REAL_USER" flatpak install flathub -y "${APPS[@]}"
 
   echo -e "${SUCC} Flathub Apps installed successfully!${NC}"
 else

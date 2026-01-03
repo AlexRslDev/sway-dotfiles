@@ -6,7 +6,7 @@
 
 * {
   font-family: "Hack Nerd Font";
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 400;
   border: none;
   border-radius: 0;
@@ -35,7 +35,7 @@
 }
 
 #workspaces button:first-child {
-  margin: 4px 2px 4px 12px;
+  margin: 4px 2px 4px 8px;
 }
 
 
@@ -82,7 +82,7 @@
 }
 
 #clock {
-  margin: 0 12px 0 0;
+  margin: 0 4px 0 0;
 }
 
 #custom-separatorbig {
@@ -93,4 +93,14 @@
 #custom-separatorsmall {
   color: #EBDBB2;
   margin: 0 8px;
+}
+
+#custom-notification {
+    color: #ebdbb2; /* Color crema de Gruvbox */
+    padding: 0 10px;
+}
+
+/* Opcional: que cambie de color cuando esté en modo DND */
+#custom-notification.dnd {
+    color: #fb4934; /* Rojo Gruvbox */
 }

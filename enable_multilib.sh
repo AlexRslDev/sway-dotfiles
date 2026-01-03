@@ -20,7 +20,7 @@ echo -e "${INST} Enabling multilib repository...${NC}"
 sed -i '/#\[multilib\]/,/#Include = \/etc\/pacman.d\/mirrorlist/ s/^#//' /etc/pacman.conf
 
 echo -e "${INST} Updating package databases...${NC}"
-pacman -Sy
+pacman -Syu
 
 echo -e "${SUCC} Done! Multilib has been enabled.${NC}"
 

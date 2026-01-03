@@ -1,15 +1,14 @@
-// Docs: https://github.com/Alexays/Waybar/wiki/
 {
   "name": "gruvbox-status-bar",
   "layer": "bottom",
   "position": "bottom",
-  "output": "DP-3", // or HDMI-A-2
+  // "output": "DP-3", // Comenta o cambia esto si el nombre de tu monitor en Sway es distinto
   "passthrough": false,
   "reload_style_on_change": true,
   "modules-left": [
-    "hyprland/workspaces",
+    "sway/workspaces",
     "custom/separatorbig",
-    "hyprland/window"
+    "sway/window"
   ],
   "modules-right": [
     "tray",
@@ -27,31 +26,20 @@
     "custom/separatorsmall",
     "clock"
   ],
-  "hyprland/workspaces": {
-    "on-click": "activate",
-    "sort-by-number": true,
+  "sway/workspaces": {
+    "disable-scroll": true,
     "all-outputs": true,
-    "window-rewrite": {
-      "title<.*youtube.*>": " ",
-      "title<.*whatsapp.*>": "",
-      "title<.*facebook.*>": "",
-      "title<.*figma.*>": "",
-      "title<.*discord.*>": " ",
-      "class<firefox-developer-edition>": "🦊",
-      "class<firefox>": "",
-      "class<com.mitchellh.ghostty>": " ",
-      "class<code>": "󰨞 ",
-      "title<.*nvim ~.*>": " ",
-      "title<.*nvim.*>": " ",
-      "class<spotify>": " ",
-      "class<chrome>": "",
-      "class<brave-browser>": "🦁",
-      "class<vlc>": "󰕼",
-      "title<.*gmail.*>": "󰊫",
-      "class<telegram-desktop>": "",
-      "class<virt-manager>": "",
-      "class<obs>": "📹",
-      "class<android-studio>": ""
+    "format": "{name}",
+    "on-click": "activate"
+  },
+  "sway/window": {
+    "format": "{}",
+    "max-length": 50,
+    "rewrite": {
+      "(.*) - Mozilla Firefox": " $1",
+      "(.*) - Visual Studio Code": "󰨞 $1",
+      "(.*) - Ghostty": " $1",
+      "nvim (.*)": " $1"
     }
   },
   "tray": {
@@ -85,35 +73,12 @@
     "format": "    <span color='#8EC07C'>{volume}%</span>",
     "format-muted": "",
     "on-click": "pavucontrol"
-    //"format-bluetooth": "{volume}% {icon}   {format_source}",
-    //"format-bluetooth-muted": " {icon}   {format_source}",
-    //"format-muted": " {format_source}",
-    //"format-source": "{volume}% ",
-    //"format-source-muted": "",
   },
   "network": {
     "format-wifi": "    <span color='#8EC07C'>{signalStrength}%</span>",
     "format-ethernet": "󰈀   {ifname}",
     "format-disconnected": "󰖪",
     "tooltip-format": "{ifname}: {essid} ({signalStrength}%)"
-  },
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
-    "format-alt": "{time} {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
   },
   "cpu": {
     "critical-threshold": 80,
