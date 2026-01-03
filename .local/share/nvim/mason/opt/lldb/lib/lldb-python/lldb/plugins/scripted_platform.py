@@ -1,1 +1,0 @@
-../../../../../../packages/codelldb/extension/lldb/lib/lldb-python/lldb/plugins/scripted_platform.py

@@ -20,7 +20,6 @@ REAL_HOME="$(getent passwd "$REAL_USER" | cut -d: -f6)"
 LOCAL_CONFIG_DIR="$REAL_HOME/.config"
 LOCAL_FONTS_DIR="/usr/share/fonts"
 LOCAL_ICONS_DIR="$REAL_HOME/.icons"
-LOCAL_NVIM_DIR="$REAL_HOME/.local/share/nvim"
 CURSOR_THEME="${XCURSOR_THEME:-Adwaita}"
 CURSOR_SIZE="${XCURSOR_SIZE:-24}"
 ICON_THEME="Gruvbox-Plus-Dark"
@@ -41,7 +40,6 @@ fi
 # CREATE DIRECTORIES IF THEY DOESN'T EXISTS
 [ ! -d "$LOCAL_FONTS_DIR" ] && mkdir -p "$LOCAL_FONTS_DIR"
 [ ! -d "$LOCAL_ICONS_DIR" ] && mkdir -p "$LOCAL_ICONS_DIR"
-[ ! -d "$LOCAL_NVIM_DIR" ] && mkdir -p "$LOCAL_NVIM_DIR"
 
 # INSTALL CORE DEPENDENCIES
 echo -e "${INST} Updating System...${NC}"
@@ -133,7 +131,6 @@ echo -e "${SUCC} Sucessfull Installation!${NC}"
 # INSTALL DOTFILES
 echo -e "${INST} Installing Dotifiles...${NC}"
 cp -rv ./.config/* "$LOCAL_CONFIG_DIR/"
-cp -rv ./.local/share/nvim/* "$LOCAL_NVIM_DIR/"
 
 # INSTALL FONTS
 echo -e "${INST} Installing Fonts...${NC}"
